@@ -12,6 +12,7 @@ export function Header() {
           bg-neutral-100 dark:bg-neutral-900
           text-neutral-800 dark:text-neutral-200
         "
+        style={{ borderBottomWidth: "0px" }}
       >
       <AddressBar/>
 			</nav>
