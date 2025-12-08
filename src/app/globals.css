@@ -113,6 +113,10 @@
   --sidebar-ring: oklch(0.556 0 0);
 }
 
+.dark\:text-erco-color:is(.dark *) {
+    color: oklch(66.859% 0.17378 49.245)
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;
