@@ -19,7 +19,8 @@ export function getPostFrontmatter(slug: string): PostFrontmatter {
     title: data.title,
     date: data.date,
     description: data.description,
-    image: data.image,
+    category: data.category,
+    tags: data.tags
   };
 }
 
@@ -44,5 +45,6 @@ export type PostFrontmatter = {
   title: string;
   date: string;
   description: string;
-  image?: string;
+  category: string;
+  tags: string[]
 };
