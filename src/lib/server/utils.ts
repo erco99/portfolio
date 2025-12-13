@@ -46,12 +46,10 @@ export function getCategoryCounts() {
 
   const counts: Record<string, number> = {};
 
-  // Inizializza tutte le categorie a 0
   CATEGORIES.forEach(cat => {
     counts[cat] = 0;
   });
 
-  // Conta i post per categoria
   posts.forEach(post => {
     if (counts[post.category] !== undefined) {
       counts[post.category] += 1;
@@ -59,6 +57,10 @@ export function getCategoryCounts() {
   });
 
   return counts;
+}
+
+export function getAllPostsCount(): number {
+  return getPostSlugs().length;
 }
 
 export type PostFrontmatter = {
