@@ -1,11 +1,33 @@
-import { getAllPosts, type PostFrontmatter } from "@/lib/server/utils";
+import { getAllPosts, getCategoryCounts, type PostFrontmatter } from "@/lib/server/utils";
 import Link from "next/link";
+import { CATEGORIES } from "@/config/categories";
 
 export default function BlogPage() {
   const posts: PostFrontmatter[] = getAllPosts();
+  const counts = getCategoryCounts();
 
   return (
     <div>
+      <nav
+        className="
+          flex overflow-hidden 
+          border-b border-neutral-300
+          bg-neutral-100 dark:bg-neutral-900
+          text-neutral-800 dark:text-erco-color
+        "
+      >
+        <div className="flex text-sm">
+          {CATEGORIES.map(cat => (
+            <span
+              key={cat}
+              className="px-4 py-2 text-sm hover:bg-neutral-200 dark:hover:bg-neutral-800 transition border-r border-neutral-200"
+            >
+              {cat.toUpperCase()} ({counts[cat]})
+            </span>
+          ))}
+        </div>
+      </nav>
+
       <div className="grid grid-cols-1 md:grid-cols-2">
         {posts.map((post) => (
           <Link

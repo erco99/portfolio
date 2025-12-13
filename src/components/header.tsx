@@ -22,7 +22,8 @@ export function Header() {
           flex overflow-hidden 
           border border-neutral-300 
           bg-neutral-100 dark:bg-neutral-900
-          text-neutral-800 dark:text-erco-color
+          text-neutral-800 dark:text-erco-color 
+          font-semibold
         "
       >
         <Link
