@@ -8,8 +8,11 @@ Build the Docker image
 ```sh
 docker build -t portfolio .
 ```
-Get the application up and running with
-```bash
-docker-compose up
+and get the website up and running on `localhost:3000` with
+```sh
+docker run --rm -p 3000:3000 portfolio
 ```
-The website will be live at `http://localhost:3000`.
+Alternatively, this can be done in one stop using docker compose:
+```bash
+docker-compose up --build
+```
