@@ -1,38 +1,27 @@
-# Stage 1: Build the application
-FROM node:20-alpine AS builder
+# Use the official Node.js 20 image with Debian Bookworm as the base
+FROM node:20-bookworm
 
+# Set the working directory inside the container
 WORKDIR /app
 
-# Leverage Docker cache
+# Copy package.json and package-lock.json (if it exists) to the working directory
 COPY package.json package-lock.json* ./
 
 # Install dependencies
 RUN npm install
 
-# Copy the rest of the application
+# Copy the rest of the application code
 COPY . .
 
-# Build the application
+# Build the application (for example, transpile TypeScript or bundle front-end)
 RUN npm run build
 
-# Stage 2: Serve the application
-FROM node:20-alpine AS runner
+# Set the environment variable to production
+ENV NODE_ENV=production
 
-WORKDIR /app
-
-# Copy only necessary files from the builder
-COPY --from=builder /app/package.json ./package.json
-COPY --from=builder /app/package-lock.json* ./package-lock.json
-COPY --from=builder /app/node_modules ./node_modules
-COPY --from=builder /app/.next ./.next
-COPY --from=builder /app/public ./public
-COPY --from=builder /app/src/content/blog ./src/content/blog
-
-# Install only production dependencies
-RUN npm prune --production
-
-# Expose the port the app runs on
+# Expose port 3000 to allow communication to/from the container
 EXPOSE 3000
 
 # Start the application
 CMD ["npm", "start"]
+
