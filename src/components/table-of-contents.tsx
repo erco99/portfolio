@@ -18,7 +18,7 @@ export function TableOfContents({ headings }: TOCProps) {
           >
             <a
               href={`#${h.id}`}
-              className="text-neutral-600 hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-neutral-100"
+              className="text-neutral-600 hover:text-neutral-900 dark:text-neutral-300 dark:hover:text-neutral-100"
             >
               {h.text}
             </a>
