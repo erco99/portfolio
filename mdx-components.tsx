@@ -73,7 +73,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     ),
 
     ul: ({ children, ...props }) => (
-      <ul className="list-disc pl-6 space-y-1 mb-4" {...props}>
+      <ul className="list-disc text-neutral-800 dark:text-neutral-300 pl-6 space-y-1 mb-4" {...props}>
         {children}
       </ul>
     ),
@@ -118,7 +118,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     ),
 
     img: ({ ...props }) => (
-      <img className="rounded-lg my-6" {...props} />
+      <img className="rounded-lg my-6 border border-neutral-300" {...props} />
     ),
 
     ...components,
