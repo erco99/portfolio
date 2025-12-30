@@ -121,6 +121,50 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
       <img className="rounded-lg my-6 border border-neutral-300" {...props} />
     ),
 
+
+table: (props) => (
+  <div className="overflow-x-auto my-6">
+    <table
+      className="w-full border border-gray-300 border-collapse text-sm rounded-lg"
+      {...props}
+    />
+  </div>
+),
+
+    thead: (props) => (
+      <thead
+        className="bg-gray-100 text-gray-700"
+        {...props}
+      />
+    ),
+
+    tbody: (props) => (
+      <tbody
+        className="divide-y divide-gray-200"
+        {...props}
+      />
+    ),
+
+    tr: (props) => (
+      <tr
+        {...props}
+      />
+    ),
+
+    th: (props) => (
+      <th
+        className="px-4 py-3 text-left font-semibold border border-gray-300"
+        {...props}
+      />
+    ),
+
+    td: (props) => (
+      <td
+        className="px-4 py-3 border border-gray-300 text-neutral-800 dark:text-neutral-300"
+        {...props}
+      />
+    ),
+
     ...components,
   };
 }
