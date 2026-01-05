@@ -39,7 +39,7 @@ export default function BlogPostWithAnchoredTOC({ mdxpost, toc }: Props) {
     <div
       className={`
         grid gap-8 h-full
-        ${showTOC ? "grid-cols-1 lg:grid-cols-[1fr_250px]" : "grid-cols-1 pl-40 pr-40"}
+        ${showTOC ? "grid-cols-1 lg:grid-cols-[1fr_250px]" : "grid-cols-1 pl-30 pr-30"}
       `}
     >
       <div className="p-4 prose dark:prose-invert">
