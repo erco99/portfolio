@@ -1,0 +1,268 @@
+---
+title: "Understanding the Internet part 1: the hardware infrastructure"
+date: "2024-01-10"
+description: "In this article the fundamentals of the hardware infrastructure that composes the internet is explored in a bottom-up approach"
+category: "understanding"
+tags: ["internet", "history"]
+---
+
+# Understanding the Internet part 1: the hardware infrastructure
+
+## Introduction
+
+This is the first article of a series in which I will explore all the elements that compose the modern global Internet, from the hardware that 
+provides the physical infrastructure to the operating systems and how they handle communication.
+
+The purpose of this series is purely personal: to organize my knowledge in this particulaar field and to deepen my understanding of 
+those areas where I feel less confident and need further clarification.
+
+To everyone who will read these articles, I hope you will find them useful and that they will help expand and/or improve your knowledge in this field.
+
+## A Brief History of Early Computers
+
+As with all historical topics, let's start with a little bit of context. Skipping smoke signals, the telegraph, 
+the telephone, and the radio, we soon reach the era of communication between computers.  
+
+As most people know, **ENIAC** is considered the first digital electronic computer. However, it **was not based on the Von Neumann architecture**.  
+
+There is often confusion when discussing the first computers because the lists of **pure Von Neumann machines** 
+and **stored-program computers** overlap but are not identical. Some Von Neumann computers were not fully stored-program, 
+and some stored-program computers were not fully Von Neumann.
+
+### Timeline of Early Computers
+| Computer                | Year      | Von Neumann | Stored-Program | Digital Electronic | Notes |
+|-------------------------|-----------|-------------|----------------|--------------------|-------|
+| IBM SSEC                | 1948      | Yes         | Partially      | Partially          | Partially electromechanical; instructions mostly read from paper tape |
+| ARC2 (Birkbeck, London) | 1948      | Yes         | Yes            | No                 | Relay-based; featured the first rotating drum storage device |
+| Manchester Baby         | 1948      | Yes         | Yes            | Yes                | First fully electronic computer to run a stored program; used a 32-bit Williams tube memory |
+| ENIAC (modified)        | 1948      | Yes         | Partially      | Yes                | First general-purpose digital electronic computer; modified to run a primitive stored-program using Function Tables |
+| BINAC                   | 1949      | Yes         | Yes            | Yes                | First stored-program computer delivered in the U.S.; test programs run Feb–Apr, completed Sept 1949 |
+| Manchester Mark 1       | 1949      | Yes         | Yes            | Yes                | Derived from Manchester Baby; intermediate version available April 1949 |
+| EDSAC                   | 1949      | Yes         | Yes            | Yes                | First practical stored-program electronic computer; first program run May 6, 1949 |
+| EDVAC                   | 1949/1951 | Yes         | Yes            | Yes                | Delivered 1949, fully operational 1951; designed with binary arithmetic and memory for instructions and data |
+| CSIR Mk I               | 1949      | Yes         | Yes            | Yes                | Australia’s first stored-program electronic computer; first program run Nov 1949 |
+| SEAC                    | 1950      | Yes         | Yes            | Yes                | First stored-program computer built for the U.S. National Bureau of Standards |
+| Pilot ACE               | 1950      | Yes         | Yes            | Yes                | Designed by Alan Turing; first program run May 10, 1950; demonstrated Dec 1950 |
+| SWAC                    | 1950      | Yes         | Yes            | Yes                | Built at UCLA; fastest computer at the time of completion July 1950 |
+| Whirlwind I             | 1950/1951 | Yes         | Yes            | Yes                | First real-time digital computer; completed Dec 1950, in actual use April 1951 |
+| ERA Atlas / UNIVAC 1101 | 1950      | Yes         | Yes            | Yes                | First commercial stored-program computer installed Dec 1950 |
+| MESM (Kiev)             | 1950      | Yes         | Yes            | Yes                | First computer in the USSR; used vacuum tubes and binary arithmetic |
+| IAS Machine             | 1951      | Yes         | Yes            | Yes                | Built at Institute for Advanced Study; prototype for many later computers |
+| ORDVAC                  | 1951      | Yes         | Yes            | Yes                | University of Illinois; early stored-program machine |
+| MANIAC I                | 1952      | Yes         | Yes            | Yes                | Los Alamos Scientific Laboratory; modeled after IAS architecture |
+| ILLIAC I                | 1952      | Yes         | Yes            | Yes                | University of Illinois; very similar to MANIAC I |
+| BESM-1 (Moscow)         | 1952      | Yes         | Yes            | Yes                | Soviet computer; used vacuum tubes for arithmetic and memory |
+| AVIDAC                  | 1953      | Yes         | Yes            | Yes                | Argonne National Laboratory; early stored-program computer |
+| ORACLE                  | 1953      | Yes         | Yes            | Yes                | Oak Ridge National Laboratory; vacuum tube-based |
+| BESK (Stockholm)        | 1953      | Yes         | Yes            | Yes                | Sweden’s first electronic computer |
+| JOHNNIAC                | 1954      | Yes         | Yes            | Yes                | RAND Corporation; IAS-based design |
+| DASK (Denmark)          | 1955      | Yes         | Yes            | Yes                | First Danish stored-program electronic computer |
+| WEIZAC (Israel)         | 1955      | Yes         | Yes            | Yes                | Weizmann Institute; first computer in Israel |
+| PERM (Munich)           | 1956      | Yes         | Yes            | Yes                | Germany; vacuum tube-based |
+| SILLIAC (Sydney)        | 1956      | Yes         | Yes            | Yes                | Australia; similar design to IAS machine |
+
+
+
+The early history of **connections between computers** is a gradual evolution from isolated machines to true computer-to-computer networking. Rather than appearing suddenly, networking emerged from existing telecommunications technologies and conceptual breakthroughs.
+
+### Early networking
+
+The first electronic computers—such as **ENIAC**, **EDSAC**, and the **Manchester Baby** 
+were completely isolated systems.
+
+- Programs and data were entered manually (switches, punched cards, paper tape)
+- Output was produced locally
+- No real-time communication with other machines
+
+At this stage, computers were standalone calculation devices.
+
+The first step toward networking was **remote access**, not computer-to-computer communication.
+
+- A central computer was connected to multiple remote terminals
+- Terminals were not computers, only input/output devices
+- Communication used telephone lines or dedicated circuits
+
+### Modems and Telephone Infrastructure
+
+Early computer networking grew out of the need to connect digital computers using an infrastructure built for analog voice, namely 
+the **public switched telephone network**, which was circuit-switched and limited to narrow audio frequencies.
+
+Because computers are digital, modems (modulator–demodulators) were invented in the 1950s and 1960s to convert bits into audible 
+tones and back again, enabling data transmission at very low speeds over phone line:
+
+- Converted digital signals to analog for transmission
+- Converted analog signals back to digital at the receiver
+- Enabled data transmission over standard phone lines
+
+Connections were still:
+- Point-to-point
+- Slow
+- Expensive
+
+But this was a crucial technical prerequisite for networking.
+
+### Packet Switching
+Packet switching emerged in the 1960s as a radical alternative to circuit-switched telephone networks, proposing that 
+digital data be broken into small packets that travel independently across a shared network and are reassembled at the 
+destination, an idea developed independently by Paul Baran in the United States and Donald Davies in the United Kingdom 
+to improve efficiency and resilience; unlike telephone circuits, packet-switched networks do not reserve a dedicated path, 
+allowing many computers to share the same links and enabling the network to continue operating even if parts fail,
+
+### ARPANET
+ARPANET was revolutionary because it used packet switching rather than traditional circuit switching. Research by 
+Paul Baran and Donald Davies showed that dividing data into packets and routing them dynamically would:
+
+- Use network capacity more efficiently
+- Avoid single points of failure
+- Allow multiple conversations to share the same links
+
+This design was critical for a research network where traffic was bursty and unpredictable.
+
+Instead of connecting computers directly to each other, ARPANET introduced **Interface Message Processors (IMPs)**, 
+which acted as early routers. Each site connected its host computer to an IMP, and IMPs communicated with one another 
+over leased telephone lines.
+
+ARPANET initially used the Network Control Protocol (NCP), which worked well within a single network but could not easily 
+connect multiple networks together. As new packet-switched networks emerged (satellite, radio, local networks), this limitation became clear.
+
+Each host computer connected directly to an IMP, which acted as a packet switch. The IMPs handled all line signaling, packetization, 
+error checking, and routing. The communication between IMPs over the leased lines was purely digital, so modems weren’t necessary.
+
+### LANs and Ethernet
+Local Area Networks (LANs) emerged in the 1970s as a solution to connect multiple computers within a limited geographic area, 
+such as a building, office, or campus, enabling high-speed communication, low latency, and resource sharing like files, printers, and later Internet access.
+
+Early LAN research at Xerox PARC explored ways to efficiently link personal computers in a single workspace, leading to 
+the invention of Ethernet by Robert Metcalfe and David Boggs in 1973, which used a shared coaxial cable and implemented 
+Carrier Sense Multiple Access with Collision Detection (CSMA/CD) to manage simultaneous transmissions, allowing multiple 
+devices to communicate without dedicated point-to-point links.
+
+Ethernet initially operated at 2.94 Mbps and became standardized as IEEE 802.3 in 1983, which ensured compatibility across 
+manufacturers and facilitated widespread adoption. Over time, the technology evolved with twisted-pair cabling, star topologies, 
+and switches, increasing speeds from 10 Mbps to 100 Mbps (Fast Ethernet), then 1 Gbps (Gigabit Ethernet), and 
+eventually 10–400 Gbps for modern enterprise networks.
+
+LANs and Ethernet fundamentally transformed computing, enabling offices to move from centralized mainframes to personal computers, 
+supporting collaboration and centralized management, and ultimately providing the foundation for enterprise networks that could 
+later connect to wide-area networks and the global Internet.
+
+### TCP/IP
+
+In the early ARPANET, computers communicated using the Network Control Protocol (NCP), which allowed hosts to send packets 
+within the ARPANET but could not connect different types of networks, limiting interoperability.
+
+By the mid-1970s, researchers recognized the need for a universal protocol that could link heterogeneous networks, 
+including ARPANET, packet radio networks, and satellite networks. Vint Cerf and Bob Kahn proposed a new protocol suite, 
+Transmission Control Protocol / Internet Protocol (TCP/IP), which separated concerns into two layers: IP for addressing and 
+routing packets across networks, and TCP for ensuring reliable end-to-end delivery, error checking, and sequencing.
+
+After years of testing and refinement, ARPANET conducted experiments in the late 1970s and early 1980s to run TCP/IP 
+alongside NCP, gradually verifying its stability and compatibility.
+
+On January 1, 1983, ARPANET officially transitioned from NCP to TCP/IP, requiring all hosts and IMPs to adopt the new protocols, 
+effectively creating the first internetworked network-of-networks. This transition allowed different networks to interconnect 
+seamlessly and laid the foundation for the modern Internet, establishing TCP/IP as the universal protocol suite still in use today.
+
+### Domain Name System (DNS)
+
+As the number of hosts grew, manually maintaining a centralized hosts file became infeasible. In 1984 DNS introduced a distributed, 
+hierarchical namespace that mapped human-readable domain names to IP addresses, using a tree of authoritative name servers 
+and caching resolvers. The system relies on a recursive and iterative query mechanism, zone delegation, and a caching architecture 
+to achieve scalability and fault tolerance. By decoupling logical identifiers from physical addresses, DNS allowed transparent 
+mobility, dynamic addressing, and hierarchical administration, which were essential for the exponential growth of TCP/IP networks.
+
+### NSFNET
+
+In 1986 the NSFNET backbone was constructed to provide high-speed connectivity between regional networks using T1 (1.5 Mbps) and later T3 (45 Mbps) 
+links. It implemented packet-switched routing based on TCP/IP, with the backbone operating as a multi-protocol backbone to 
+support IP, TCP, and emerging application protocols. NSFNET introduced redundant core routing, hierarchical addressing, and 
+performance monitoring, enabling large-scale experimentation with inter-domain routing and congestion control. The backbone 
+provided a testbed for scalable routing protocols such as OSPF and BGP, which would later underpin global Internet routing.
+
+### Open standardization and the IETF
+
+In the late 80s the formation of the IETF formalized a community-driven approach to protocol standardization. Technical specifications were 
+documented in RFCs, which rigorously defined protocol behavior, packet formats, state machines, and error-handling semantics. 
+This process enabled iterative refinement, backward compatibility testing, and early implementation in experimental networks. 
+By prioritizing open specifications, modular protocol design, and interoperability, the IETF ensured that TCP/IP could evolve 
+with emerging transport-layer and application-layer protocols without requiring centralized authority.
+
+### The decommissioning of ARPANET
+
+ARPANET’s shutdown in 1990 reflected the migration of packet-switched networking from a government-controlled research network to 
+broader academic and commercial infrastructure. From a technical standpoint, ARPANET had pioneered routing algorithms, congestion 
+control, and internetworking mechanisms. Its legacy includes the TCP/IP stack’s adoption, decentralized name resolution experiments, 
+and the deployment of redundant, fault-tolerant nodes. Decommissioning also allowed for the expansion of NSFNET and private backbones, 
+which could implement higher-capacity routers, link aggregation, and more sophisticated traffic engineering.
+
+### World Wide Web
+
+Tim Berners-Lee’s Web was implemented in 1991 as an application-layer protocol suite over TCP/IP, introducing HTTP for stateless 
+client-server communication, HTML for structured hypertext documents, and URIs for unique resource identification. 
+The Web relied on TCP’s reliable byte-stream abstraction to provide consistent content delivery across heterogeneous networks. 
+The architecture emphasized hypermedia as a linking mechanism, enabling distributed information retrieval without modifying 
+the underlying transport or network layers. This separation of concerns allowed applications to evolve independently while leveraging 
+the global TCP/IP infrastructure.
+
+### Graphical web browsers (1993)
+
+The emergence of graphical browsers like Mosaic leveraged the HTTP/HTML stack to render text, images, and hyperlinks within an integrated 
+interface. From a networking perspective, these browsers introduced persistent TCP connections, client-side caching, and support 
+for multiple concurrent requests to optimize latency. They also encouraged the adoption of emerging standards, such as inline 
+images (GIF), table-based layouts, and eventually scripting extensions. The graphical layer highlighted the importance of application-level 
+protocols for usability while revealing performance limitations of TCP/IP under high-volume, interactive workloads.
+
+### Commercialization of the Internet (1995)
+
+The transition to commercial Internet backbones required ISPs to implement inter-domain routing using BGP, address allocation through 
+IANA and RIRs, and service-level agreements to guarantee connectivity and throughput. This era also saw the emergence of network management 
+practices, including SNMP monitoring, routing policies, and Quality of Service experimentation. The commercialization phase accelerated 
+deployment of high-capacity fiber links, redundant routing, and scalable DNS infrastructure, transforming the Internet into a high-availability, 
+multi-tenant network supporting heterogeneous applications from email to e-commerce.
+
+### The modern Internet
+
+The contemporary Internet operates as a globally distributed, multi-layered system with heterogeneous access networks, mobile devices, 
+and cloud infrastructures. Core technologies include IPv4/IPv6, TCP congestion control, BGP for inter-domain routing, and 
+application-layer protocols such as HTTP/HTTPS, SMTP, and emerging streaming protocols. Overlay networks, CDNs, and edge computing optimize 
+latency and throughput, while wireless protocols and IoT frameworks extend connectivity to billions of devices. The modern Internet exemplifies 
+scalable, fault-tolerant design, layered modularity, and end-to-end principles that originated with TCP/IP.
+
+## The elements
+
+- Network Interface Card (NIC)
+- Wireless Network Interface Card
+- Ethernet Cable
+- Fiber Optic Cable
+- Coaxial Cable
+- Copper Twisted Pair Cable
+- Connectors (RJ-45, LC, SC, ST)
+- Patch Panel
+- Network Rack / Cabinet
+- Modem
+- Optical Network Terminal (ONT)
+- Optical Line Terminal (OLT)
+- Router
+- Core Router
+- Distribution Router
+- Switch
+- Layer 3 Switch
+- Wireless Access Point
+- Network Bridge
+- Firewall Appliance
+- Load Balancer
+- Proxy Appliance
+- Repeater
+- Signal Amplifier
+- SFP / SFP+ / QSFP Transceiver Modules
+- DSLAM
+- Base Station (4G / 5G)
+- Satellite Communication Equipment
+- Point-to-Point Radio Link Equipment
+- Data Center Switch
+- Data Center Router
+- Server
+- Network Storage (NAS / SAN)
+- Uninterruptible Power Supply (UPS)
+- Power Distribution Unit (PDU)
+- Cooling Systems (Data Center)
