@@ -1,7 +1,7 @@
 import { getPostBySlug } from "@/lib/server/utils";
-import BlogPostPageClient from "./BlogPostPageClient";
-import MDXContent from "./MDXContent";
 import { TableOfContents } from "@/components/table-of-contents";
+import BlogPostPageClient from "./BlogPostPageClient";
+import MDXContent from "../../../components/MDXContent";
 
 type Props = {
   params: { slug: string };
