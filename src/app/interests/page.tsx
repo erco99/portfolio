@@ -7,17 +7,11 @@ export default function InterestsPage() {
       <div className="border-r p-6 border-neutral-300">
         <Photography/>
       </div>
-
-      {/* Interesse piccolo 2 */}
       <div className="rounded-xl border p-6">
- 
       </div>
-
-      {/* Interesse grande */}
       <div className="border-t border-neutral-300 p-6 md:col-span-2">
         <Waf/>
       </div>
-
     </div>
   );
 }
