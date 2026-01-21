@@ -1,12 +1,32 @@
 [
   {
-    "title": "prova",
-    "description": "provaprova",
-    "github": "dsds"
+    "title": "Mappis",
+    "description": "An Android navigation application designed for environments where traditional mapping services are unreliable, such as forests or underground areas. It supports real-time route tracking, custom map annotations, and map saving with local persistence. Developed as a university project, it demonstrates mobile mapping, geolocation handling, and offline-friendly data management using Java and OpenStreetMap technologies.",
+    "github": "https://github.com/erco99/mappis"
   },
   {
-    "title": "Profva",
-    "description": "[pproafdsa]",
-    "github": "hdsdsds"
+    "title": "Climate temperature analysis",
+    "description": "A data analysis and machine learning project focused on studying long-term surface temperature trends using historical climate data from 1750 to recent years. The project includes data exploration, preprocessing, feature engineering, and predictive modeling to estimate average country-level temperatures over specific time periods. Developed as a university project, it demonstrates data-intensive workflows and regression-based modeling using Python and common data science libraries.",
+    "github": "https://github.com/erco99/climate-temperature-analysis"
+  },
+  {
+    "title": "A.S.D. Tennis Pro",
+    "description": "A full-stack web application designed to manage and support operations for a tennis club, with a focus on simplicity and usability. Built with the MEVN stack, it features a Vue 3 frontend and a Node.js/Express backend communicating via REST APIs and WebSockets for real-time updates. Developed as a university project, it demonstrates full-stack architecture design, authentication, real-time communication, and data persistence.",
+    "github": "https://github.com/erco99/asdtennispro"
+  },
+  {
+    "title": "Traffic Lights Management System",
+    "description": "A Java-based distributed system designed to optimize traffic flow in small cities through real-time sensor data and adaptive traffic light control. The system features a resilient client-server architecture with failover support, dynamic light timing calculations, and a GUI simulation of vehicle movements and traffic states. Developed as a university project, it demonstrates distributed system design, fault tolerance, real-time data processing, and MVC-based architecture.",
+    "github": "https://github.com/erco99/distributed-tlm-system"
+  },
+  {
+    "title": "Scothello",
+    "description": "A strategic board game implementation that recreates the classic two-player game Othello (Reversi). The application manages game logic, turn-based mechanics, and piece-flipping rules on an 8×8 grid, providing a faithful digital version of the tabletop game. Co-developed as a collaborative academic project, it follows a structured architecture and maintains clear game state management for accurate and engaging gameplay.",
+    "github": "https://github.com/EnricoLumini/pps-22-scothello?tab=readme-ov-file"
+  },
+    {
+    "title": "WhodaBSTRD",
+    "description": "a Chrome extension that identifies which users you follow on Instagram do not follow you back. It scans your Instagram Web profile, cross-references followers and following lists using Instagram’s internal APIs, and displays the results directly on your profile page in a clean, structured grid. The extension operates entirely within the browser, requires no credentials or external services, and provides a fast, privacy-conscious way to manage follow/unfollow actions.",
+    "github": "https://github.com/erco99/whodabstrd"
   }
 ]
