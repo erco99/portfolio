@@ -11,7 +11,6 @@ type Props = {
   allCount: number;
 };
 
-
 export default function BlogClient({
   posts,
   categoriesCount,

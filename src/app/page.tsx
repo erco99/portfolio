@@ -1,14 +1,18 @@
-import Introduction from '@/content/pages/introduction.mdx'
+import {
+  getAllPosts,
+  getAllPostsCount,
+  type PostFrontmatter,
+} from "@/lib/server/posts";
+import HomeClient from "./HomeClient";
 
 export default function Home() {
+  const posts: PostFrontmatter[] = getAllPosts();
+  const allCount = getAllPostsCount();
+
   return (
-    <div className="grid grid-cols-2 h-full">
-      <div className="p-4 border-r border-neutral-200">
-        <Introduction />
-      </div>
-      <div className="p-4">
-        Parte 2
-      </div>
-    </div>
+    <HomeClient
+      posts={posts}
+      allCount={allCount}
+    />
   );
 }
