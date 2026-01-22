@@ -4,7 +4,7 @@ import {
   getCategoryCounts,
   getAllPostsCount,
   type PostFrontmatter,
-} from "@/lib/server/utils";
+} from "@/lib/server/posts";
 import BlogClient from "./BlogClient";
 
 export default function BlogPage() {

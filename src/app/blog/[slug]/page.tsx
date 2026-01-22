@@ -1,4 +1,4 @@
-import { getPostBySlug } from "@/lib/server/utils";
+import { getPostBySlug } from "@/lib/server/posts";
 import { TableOfContents } from "@/components/table-of-contents";
 import BlogPostPageClient from "./BlogPostPageClient";
 import MDXContent from "../../../components/MDXContent";

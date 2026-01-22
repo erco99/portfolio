@@ -1,6 +1,6 @@
 "use client"
 
-import { type PostFrontmatter } from "@/lib/server/utils";
+import { type PostFrontmatter } from "@/lib/server/posts";
 import Link from "next/link";
 import { CATEGORIES } from "@/config/categories";
 import { useState } from "react";
