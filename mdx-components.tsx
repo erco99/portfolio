@@ -58,9 +58,12 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     ),
 
     p: ({ children, ...props }) => (
-      <p className="leading-7 text-neutral-800 dark:text-neutral-300 mb-4" {...props}>
+      <div
+        className="leading-7 text-neutral-800 dark:text-neutral-300 mb-4"
+        {...props}
+      >
         {children}
-      </p>
+      </div>
     ),
 
     a: ({ children, ...props }) => (
