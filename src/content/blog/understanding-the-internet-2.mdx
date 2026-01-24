@@ -8,4 +8,52 @@ tags: ["internet", "NIC"]
 
 # Understanding the Internet part 2: the hardware infrastructure
 
-In this article I will explore the structure and the functioning of a NIC.
+In this article, we will explore the structure and operation of a Network Interface Card (NIC).
+
+Although NICs can differ in design and implementation, they all share the same fundamental principles of operation. 
+Rather than examining every function a NIC can perform, this article focuses on the core mechanisms that define its primary purpose.
+
+At a high level, all Network Interface Cards (NICs) are built from the same essential hardware building blocks, even though 
+implementations and complexity can vary a lot. The core components are:
+
+1. Network Controller (NIC Controller / MAC): it implements the MAC layer of the network stack.
+It is responsible for:
+- Framing and deframing packets
+- Managing MAC addresses
+- Handling checksum generation and verification
+- Controlling access to the physical medium
+
+Modern NICs often integrate additional logic here, such as offloading tasks (e.g., checksum offload, segmentation offload).
+
+2. PHY (Physical Layer Transceiver): the PHY handles the actual electrical, optical, or radio signaling. Its responsibilities include:
+
+- Converting digital data into signals on the wire (and back)
+- Encoding/decoding line signals
+- Link negotiation (speed, duplex, auto-negotiation)
+- Detecting link status
+
+3. Interface to the Host System: the component that connects the NIC to the host. Basically:
+- PCI / PCIE for internal NICs
+- USB for external NICs
+- SoC internal buses in embedded systems
+
+Its main function is to exchange data with system memory, raise interrupts or use polling mechanisms and receive
+configuration commands from the driver.
+
+4. Buffer Memory.
+Used for:
+- Temporarily storing incoming frames before the host processes them
+- Holding outgoing frames before transmission
+- Reducing packet loss during bursts
+
+5. Clock and Timing Circuitry
+
+6. Non-Volatile Memory: to store the MAC address, firmware/microcode and config params.
+
+7. Physical Connector: the actual port that connects the NIC to the newtwork medium (Es. Rj-45 for ethernet)
+
+![General NIC layout](/images/blog/A-standard-NIC-architecture.png)
+
+In the above figure we can look at a standard NIC high-level architecture [^1].
+
+[^1]: https://www.researchgate.net/figure/A-standard-NIC-architecture_fig2_3044909
