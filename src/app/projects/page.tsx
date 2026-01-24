@@ -29,7 +29,7 @@ export default function ProjectsPage() {
               target="_blank"
               className="absolute bottom-0 left-0"
             >
-              <span className="block text-sm font-medium px-3 py-1 border-t border-r border-neutral-300 text-neutral-700 hover:bg-neutral-900 hover:text-white transition-colors">
+              <span className="block text-sm font-medium px-3 py-1 border-t border-r border-neutral-300 text-neutral-500 hover:bg-neutral-900 hover:text-white transition-colors">
                 Check on GitHub
               </span>
             </Link>

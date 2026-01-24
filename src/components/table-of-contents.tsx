@@ -38,7 +38,6 @@ export function TableOfContents({ headings }: TOCProps) {
 
   return (
     <nav className="text-sm sticky top-24">
-      <p className="font-semibold mb-2">Table Of Contents</p>
       <ul className="space-y-1">
         {hierarchy.map(({ heading, children }) => (
           <li key={heading.id}>
