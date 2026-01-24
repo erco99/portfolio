@@ -117,29 +117,29 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
       </pre>
     ),
 
-img: ({ alt, ...props }) => (
-  <figure className="my-6">
-    <img
-      className="rounded-lg border border-neutral-300 mx-auto"
-      alt={alt}
-      {...props}
-    />
-    {alt && (
-      <figcaption className="mt-2 text-sm text-center text-neutral-600 dark:text-neutral-400">
-        {alt}
-      </figcaption>
-    )}
-  </figure>
-),
+    img: ({ alt, ...props }) => (
+      <figure className="my-6">
+        <img
+          className="rounded-lg border border-neutral-300 mx-auto"
+          alt={alt}
+          {...props}
+        />
+        {alt && (
+          <figcaption className="mt-2 text-sm text-center text-neutral-600 dark:text-neutral-400">
+            {alt}
+          </figcaption>
+        )}
+      </figure>
+    ),
 
-table: (props) => (
-  <div className="overflow-x-auto my-6">
-    <table
-      className="w-full border border-gray-300 border-collapse text-sm rounded-lg"
-      {...props}
-    />
-  </div>
-),
+    table: (props) => (
+      <div className="overflow-x-auto my-6">
+        <table
+          className="w-full border border-gray-300 border-collapse text-sm rounded-lg"
+          {...props}
+        />
+      </div>
+    ),
 
     thead: (props) => (
       <thead
