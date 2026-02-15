@@ -22,14 +22,14 @@ export default function Home({ posts }: Props) {
   const isFull = recentPosts.length === N;
 
   return (
-    <div className="grid grid-cols-2 h-full">
-      <div className="px-4 border-r border-neutral-200">
+    <div className="grid grid-cols-1 md:grid-cols-2 h-full">
+      <div className="px-4 border-b md:border-b-0 md:border-r border-neutral-200">
         <Introduction />
       </div>
 
       <div className="flex flex-col h-full">
-        <h2 className="px-4 pt-8 pb-4 text-2xl font-semibold tracking-tight border-b border-neutral-200 shrink-0">
-          Recent Posts
+        <h2 className="px-4 pt-8 pb-4 text-2xl font-semibold tracking-tight border-neutral-200 shrink-0">
+          Recent Posts:
         </h2>
 
         <div
