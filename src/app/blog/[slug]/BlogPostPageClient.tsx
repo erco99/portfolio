@@ -14,7 +14,7 @@ export default function BlogPostWithAnchoredTOC({ mdxpost, toc }: Props) {
 
   return (
     <div className="relative flex justify-center">
-      <article className="prose dark:prose-invert max-w-3xl">
+      <article className="prose dark:prose-invert w-full max-w-5xl mx-auto px-4 sm:px-6 lg:px-16">
         {mdxpost}
       </article>
 
