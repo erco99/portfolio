@@ -39,7 +39,7 @@ export default function BlogClient({
   return (
     <div className="flex flex-col h-full">
       {/* Categories */}
-      <nav className="flex border-b border-neutral-300 bg-neutral-100 dark:bg-neutral-900 text-sm">
+      <nav className="flex flex-none overflow-x-auto whitespace-nowrap border-b border-neutral-300 bg-neutral-100 dark:bg-neutral-900 text-sm">
         <span
           onClick={() => setActiveCategory(null)}
           className={`px-4 py-2 cursor-pointer border-r border-neutral-300
